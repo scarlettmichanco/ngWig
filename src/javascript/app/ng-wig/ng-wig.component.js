@@ -53,7 +53,7 @@ angular.module('ngWig')
         // use insertHtml for `createlink` command to account for IE/Edge purposes, in case there is no selection
         let selection = $document[0].getSelection().toString();
         if(command === 'createlink' && selection === ''){
-          $document[0].execCommand('insertHtml', false, '<a href="' + options + '">' + options + '</a>');
+          $document[0].execCommand('insertHtml', false, '<a href="' + options + '" target="_blank">' + options + '</a>');
         }
         else{
           $document[0].execCommand(command, false, options);
